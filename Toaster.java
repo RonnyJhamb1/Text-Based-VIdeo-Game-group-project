@@ -17,7 +17,7 @@ setFood(newFood);
 }
 
 public void setDamage() {
-System.out.println("how many seconds to microwave");
+System.out.println("how many seconds to toast");
 int damage = input.nextInt();
 setDamage(damage);
 
@@ -30,8 +30,13 @@ System.out.println( getFood() + " health "+ newHealth);
 else { 
 System.out.println("The food exploded!!");
 System.out.println("You lose.");
-lose = true;
-input.close();
+newHealth -=25;
+}
+if(newHealth <= 0){
+    System.out.println("You lose!");
+    lose = true;
+    input.close();
+
 }
 }
 }

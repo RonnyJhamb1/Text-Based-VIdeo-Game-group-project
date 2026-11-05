@@ -6,12 +6,12 @@ public class Appliance {
 
 
      private String food;
-     private int health = 100;
+     protected int health = 100;
      private int damage;
      public static boolean lose = false;
 public static void main(String[] args) {
     while(lose == false){
-        
+        DiningTable table = new DiningTable();
         Microwave myMicrowave = new Microwave();
         myMicrowave.setFood();
         myMicrowave.setDamage();
@@ -29,6 +29,10 @@ public static void main(String[] args) {
         Toaster myToaster = new Toaster();
         myToaster.setFood();
         myToaster.setDamage();
+        }
+        if(lose == false){
+          table.eatFood();
+            
         }
     }
 }
