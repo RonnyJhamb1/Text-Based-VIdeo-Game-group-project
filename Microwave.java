@@ -2,24 +2,36 @@ package TextBasedVideoGame;
 
 import java.util.Scanner;
 public class Microwave extends Appliance { 
-private int health = 100;
-private int damage;
-Scanner input = new Scanner(System.in);
-public void inputFood() {
-System.out.println("enter the food you want to cook");
-String food = input.nextLine();
-}
-public void microwaveFood() {
-System.out.println("how many seconds to microwave");
-String damage = input.nextInt();
-int health -= damage;
-}
-if(health > 0) {
-System.out.println( food + "health" + health);
-public void move();
-}
-else { 
-System.out.println(“The food exploded!!”);
-}
+public Microwave(String food, int health, int damage){
+    super(food, health, damage);
 }
 
+public Microwave() 
+{ super("Unknown", 100, 0); 
+}
+Scanner input = new Scanner(System.in);
+public void setFood() {
+System.out.println("enter the food you want to cook for the microwave");
+String newFood = input.nextLine();
+setFood(newFood);
+}
+
+public void setDamage() {
+System.out.println("how many seconds to microwave");
+int damage = input.nextInt();
+setDamage(damage);
+
+int newHealth = getHealth() - damage;
+setHealth(newHealth);
+
+if (newHealth > 0) {
+System.out.println( getFood() + " health "+ newHealth);
+}
+else { 
+System.out.println("The food exploded!!");
+System.out.println("You lose.");
+lose = true;
+input.close();
+}
+}
+}
