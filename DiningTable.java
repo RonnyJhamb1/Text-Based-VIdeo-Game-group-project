@@ -1,28 +1,38 @@
 package TextBasedVideoGame;
 import java.util.Scanner;
-public class DiningTable extends Toaster{
+public class DiningTable extends Appliance{
+    public String f;
+   public DiningTable(String food, int health, int damage){
+    super(food, health, damage);
+}
+
+public DiningTable() 
+{ super("Unknown", 100, 0); 
+}
 
     public void eatFood(){
         Scanner input  = new Scanner(System.in);
-        Toaster toaster  = new Toaster();
-if(toaster.getHealth() >0 && toaster.getHealth() <=50){
+        
+if(health >0 && health <=50){
 System.out.println("Do you want to drink the chug jug");
-input.next();
-if(input.equals("yes")){
+f = input.next();
+if(f.equals("yes")){
     health +=20;
     System.out.println("You win!!");
+    lose = true;
+    input.close();
 }
-else if(input.equals("no")){
+else if(f.equals("no")){
     System.out.println("You lost!");
     lose = true;
     input.close();
 }
 else{
     System.out.println("Invalid input. Enter yes or no.");
-    if(input.equals("yes")){
+    if(f.equals("yes")){
     health +=20;
     }
-    else if(input.equals("no")){
+    else if(f.equals("no")){
     System.out.println("You lost!");
     lose = true;
     input.close();

@@ -39,6 +39,7 @@ public static void main(String[] args) {
         }
         if(!lose){
             myToaster.getHealth();
+            table.setHealth(myToaster.getHealth());
           table.eatFood();
             
         }
