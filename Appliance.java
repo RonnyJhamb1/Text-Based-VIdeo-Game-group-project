@@ -11,6 +11,7 @@ public class Appliance {
      public static boolean lose = false;
 public static void main(String[] args) {
     while(!lose){
+        System.out.println("Welcome to the kitchen!");
         DiningTable table = new DiningTable();
         Microwave myMicrowave = new Microwave();
          Oven myOven = new Oven();
@@ -37,6 +38,7 @@ public static void main(String[] args) {
         
         }
         if(!lose){
+            myToaster.getHealth();
           table.eatFood();
             
         }
