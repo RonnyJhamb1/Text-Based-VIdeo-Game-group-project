@@ -10,27 +10,33 @@ public class Appliance {
      private int damage;
      public static boolean lose = false;
 public static void main(String[] args) {
-    while(lose == false){
+    while(!lose){
         DiningTable table = new DiningTable();
         Microwave myMicrowave = new Microwave();
+         Oven myOven = new Oven();
+         AirFryer Fryer = new AirFryer();
+          Toaster myToaster = new Toaster();
         myMicrowave.setFood();
         myMicrowave.setDamage();
-        if(lose == false){
-        AirFryer myAirFryer = new AirFryer();
-        myAirFryer.setFood();
-        myAirFryer.setDamage();
+        if(!lose){
+            myMicrowave.getHealth();
+            Fryer.setHealth(myMicrowave.getHealth());
+       Fryer.setFood();
+        Fryer.setDamage();
         }
-        if(lose == false){
-        Oven myOven = new Oven();
+        if(!lose){
+             myOven.setHealth(Fryer.getHealth());
         myOven.setFood();
         myOven.setDamage();
+       
         }
-        if(lose == false){
-        Toaster myToaster = new Toaster();
+        if(!lose){
+            myToaster.setHealth(myOven.getHealth());
         myToaster.setFood();
         myToaster.setDamage();
+        
         }
-        if(lose == false){
+        if(!lose){
           table.eatFood();
             
         }

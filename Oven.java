@@ -29,6 +29,7 @@ System.out.println( getFood() + " health "+ newHealth);
 }
 else { 
 System.out.println("The food exploded!!");
+System.out.println("You lost 25 health");
 System.out.println("You lose.");
 newHealth -=25;
 }
